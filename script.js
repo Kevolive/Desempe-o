@@ -15,22 +15,61 @@ function iniciarSesion() {
                 console.log('Contarseña incorrecta. Inténtelo de nuevo')
                 intentos--;
             }
-        }
+        } return true;
+    }else {
+        console.log('Usuario incorrecto')
+        return false;
     }
 } iniciarSesion();
 
 function capturarIngresoEmpleado() {
-    let ingresoMensualEMpleado = Number(prompt('Ingrese el sueldo del empleado: '))
-    var impuesto= 0
-    if (ingresoMensualEMpleado < 2000000) {
-         impuesto = ingresoMensualEMpleado * 0.1
-         console.log(impuesto)
-    } else if (ingresoMensualEMpleado >=2000000 && ingresoMensualEMpleado == 5000000){
-        impuesto = ingresoMensualEMpleado * 0.15
-        console.log(impuesto)
-    }else {
-        impuesto= ingresoMensualEMpleado * 0.2
-        console.log(impuesto)
+    let numeroEmpleados = true
+
+    while(numeroEmpleados){
+        let ingresoMensualEmpleado = Number(prompt('Ingrese el sueldo del empleado: '))
+        if(ingresoMensualEmpleado < 2000000){
+        return ingresoMensualEmpleado;
+    } else if(ingresoMensualEmpleado >=2000000 && ingresoMensualEmpleado <= 5000000){
+        return ingresoMensualEmpleado;
+    } else{
+        return ingresoMensualEmpleado;
     }
+}
+    // var impuesto= 0
+    // if (ingresoMensualEMpleado < 2000000) {
+    //      impuesto = ingresoMensualEMpleado * 0.1
+    //      console.log(impuesto)
+    // } else if (ingresoMensualEMpleado >=2000000 && ingresoMensualEMpleado == 5000000){
+    //     impuesto = ingresoMensualEMpleado * 0.15
+    //     console.log(impuesto)
+    // }else {
+    //     impuesto= ingresoMensualEMpleado * 0.2
+    //     console.log(impuesto)
+    // }
     
-}capturarIngresoEmpleado()
+
+} capturarIngresoEmpleado();
+
+function calcularImpuesto(ingresoMensualEmpleado) {
+    let impuesto = 0;
+    if (ingresoMensualEmpleado < 2000000) {
+        impuesto = ingresoMensualEmpleado  * 0.10;
+        return impuesto;
+    } else if (ingresoMensualEmpleado > 2000000 && ingresoMensualEmpleado < 5000000) {
+        impuesto = ingresoMensualEmpleado * 0.15;
+        return impuesto;
+    } else {
+        impuesto= ingresoMensualEmpleado * 0.20;
+        return impuesto;
+
+    } 
+} calcularImpuesto();
+
+function mostrarImpuesto(){
+   
+}mostrarImpuesto();
+   
+
+
+        
+        

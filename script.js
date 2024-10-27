@@ -20,15 +20,21 @@ function iniciarSesion() {
         console.log('Usuario incorrecto')
         return false;
     }
-} 
+} iniciarSesion();
 
 function capturarIngresoEmpleado() {
     let numeroEmpleados = true
 
     while(numeroEmpleados){
-        let ingresoMensualEMpleado = Number(prompt('Ingrese el sueldo del empleado: '))
-        return ingresoMensualEMpleado;
+        let ingresoMensualEmpleado = Number(prompt('Ingrese el sueldo del empleado: '))
+        if(ingresoMensualEmpleado < 2000000){
+        return ingresoMensualEmpleado;
+    } else if(ingresoMensualEmpleado >=2000000 && ingresoMensualEmpleado <= 5000000){
+        return ingresoMensualEmpleado;
+    } else{
+        return ingresoMensualEmpleado;
     }
+}
     // var impuesto= 0
     // if (ingresoMensualEMpleado < 2000000) {
     //      impuesto = ingresoMensualEMpleado * 0.1
@@ -42,33 +48,28 @@ function capturarIngresoEmpleado() {
     // }
     
 
-} 
+} capturarIngresoEmpleado();
 
-function calcularImpuesto(ingresoMensualEMpleado) {
-    
-    if (capturarIngresoEmpleado() < 2000000) {
-        return ingresoMensualEMpleado  * 0.10;
-    } else if (capturarIngresoEmpleado() > 2000000 && capturarIngresoEmpleado() < 5000000) {
-        return ingresoMensualEMpleado * 0.15;
+function calcularImpuesto(ingresoMensualEmpleado) {
+    let impuesto = 0;
+    if (ingresoMensualEmpleado < 2000000) {
+        impuesto = ingresoMensualEmpleado  * 0.10;
+        return impuesto;
+    } else if (ingresoMensualEmpleado > 2000000 && ingresoMensualEmpleado < 5000000) {
+        impuesto = ingresoMensualEmpleado * 0.15;
+        return impuesto;
     } else {
-        return ingresoMensualEMpleado * 0.20;
+        impuesto= ingresoMensualEmpleado * 0.20;
+        return impuesto;
 
     } 
-}
+} calcularImpuesto();
 
 function mostrarImpuesto(){
-    console.log(`El impuesto sobre la renta a pagar es: ${impuesto}`)
-}
+   
+}mostrarImpuesto();
+   
 
-if(iniciarSesion()){
-    let continuar = true;
 
-    while(continuar){
-        let ingreso = capturarIngresoEmpleado();
-        let impuesto = calcularImpuesto(ingresoMensualEMpleado);
-        mostrarImpuesto(impuesto);
-    }
-    console.log("Calculo realizado")
-} else{
-    console.log("Finalizado")
-}
+        
+        

@@ -134,42 +134,7 @@ function iniciarSesion() {
 
 
 
-// var impuesto= 0
-// if (ingresoMensualEMpleado < 2000000) {
-//      impuesto = ingresoMensualEMpleado * 0.1
-//      console.log(impuesto)
-// } else if (ingresoMensualEMpleado >=2000000 && ingresoMensualEMpleado == 5000000){
-//     impuesto = ingresoMensualEMpleado * 0.15
-//     console.log(impuesto)
-// }else {
-//     impuesto= ingresoMensualEMpleado * 0.2
-//     console.log(impuesto)
-// }
-// function capturarEmpleado() {
-//     let ingreso = parseFloat(prompt("Ingrese el ingreso mensual del empleado (o ingrese '0' para salir):"));
-//     return ingreso > 0 ? ingreso : null;
-// }
 
-// capturarIngresoEmpleado();
-
-// function calcularImpuesto(ingresoMensualEmpleado) {
-//     let impuesto = 0;
-//     if (ingresoMensualEmpleado < 2000000) {
-//         impuesto = ingresoMensualEmpleado * 0.10;
-//         return impuesto;
-//     } else if (ingresoMensualEmpleado > 2000000 && ingresoMensualEmpleado < 5000000) {
-//         impuesto = ingresoMensualEmpleado * 0.15;
-//         return impuesto;
-//     } else {
-//         impuesto = ingresoMensualEmpleado * 0.20;
-//         return impuesto;
-
-//     }
-// } calcularImpuesto();
-
-// function mostrarImpuesto() {
-
-// } mostrarImpuesto();
 
 
 

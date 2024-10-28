@@ -1,53 +1,64 @@
-function iniciarSesion() {
-    const usuario = prompt('Ingrese el usuario por favor:')
-
-    if (usuario === 'admin') {
+function iniciarSesion(){
+    const usuario = prompt("Ingrese por favor el usuario:")
+    if(usuario === "admin"){
+       
 
         let intentos = 3;
 
-        for (let i = 0; i < 3; i++) {
-            const contraseña = Number(prompt('Ingrese la contraseña: '))
+        for(let i =0; i<3;i++){
+            const contraseña = Number(prompt("Por favor ingresa la contraseña:"))
+            if(contraseña === 1234){
+                console.log("Bienvenido al sistema "+ usuario)
 
-            if (contraseña === 1234) {
-                console.log('Bienvenido al sistema ' + usuario)
-                function capturarIngresoEmpleado() {
-                    let numEmpleados = true;
-                    let ingresoMensualEmpleado = Number(prompt('Ingrese el sueldo del empleado: '))
-                    while(numEmpleados){
-                        
-                    }
-                    return ingresoMensualEmpleado;
-                   
-
-                } capturarIngresoEmpleado();
-
-                function calcularImpuesto(ingresoMensualEmpleado) {
-                    let impuesto = 0;
-                    if (ingresoMensualEmpleado < 2000) {
-                        impuesto = 0.10
-                    } else if (ingresoMensualEmpleado > 2000 && ingresoMensualEmpleado < 5000) {
-                        impuesto = 0.15
-                    } else {
-                        impuesto = 0.20
-                    }
-                    return ingresoMensualEmpleado * impuesto
-                } calcularImpuesto();
-
-                function mostrarImpuesto(ingresoMensualEmpleado, impuesto) {
-                    console.log(`El impuesto del sueldo mensual de $${ingresoMensualEmpleado}, es: $${impuesto}`)
-                } mostrarImpuesto();
-                return true;
-            } intentos--;
-            console.log("Contraseña incorrecta. Te quedan " + intentos + " intentos. Por favor ingresa la contraseña correcta")
-            if (intentos == 0) {
-                console.log("System blocked")
+                function capturarIngresoEmpleado(){
+                    let ingresoEmpleado = Number(prompt("Por favor ingresa el sueldo mensual del empleado. O escribe 0, para abandonar el sistema de ingreso"))
+                    return ingresoEmpleado >0 ? ingresoEmpleado :null
             }
-        }
-    } else {
-        console.log("Usuario incorrecto")
-        return false;
+
+            function calcularImpuesto(){
+                let tasaDeImpuesto = 0;
+                if(ingresoEmpleado < 2000000){
+                    tasaDeImpuesto * 0.10;
+                }else if(ingresoEmpleado >=2000000 && ingresoEmpleado <=5000000){
+                    tasaDeImpuesto * 0.15;
+                }else{
+                    tasaDeImpuesto * 0.20;
+                }return ingresoEmpleado * tasaDeImpuesto;
+            }
+
+            function mostrarImpuesto(ingresoEmpleado, impuesto){
+                console.log(`Para el ingreso de $${ingresoEmpleado}, el impuesto es de $${impuesto}.`)
+            }
+            let numEmpleados = true;
+            while(numEmpleados){
+                let ingresoEmpleado = capturarIngresoEmpleado();
+                if (ingresoEmpleado === null){
+                    numEmpleados = false;
+                }else{
+                    let impuesto = calcularImpuesto(ingresoEmpleado)  
+                    mostrarImpuesto(ingresoEmpleado, impuesto)                      
+                    
+                }
+            }
+            
+            return true; 
+            } intentos--;
+            
+        } 
+    }else{
+        console.log("Usuario incorrecto. Recarga la página para volver a iniciar")
     }
-} iniciarSesion();
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
